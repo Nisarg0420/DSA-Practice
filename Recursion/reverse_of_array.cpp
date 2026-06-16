@@ -11,7 +11,7 @@ using namespace std;
 
     for(int i=0;i<n;i++)
     {
-        arr2[i]=arr1[n-i];
+        arr2[i]=arr1[n-i-1];
     }
 
      for(int i=0;i<n;i++)
