@@ -6,20 +6,30 @@
 #include<iostream>
 using namespace std;
 
-void f(int n1,int n2,int i,int gcd)
+void f(int n1,int n2)
 {
-    if(i>n1)
+    if(n1==0)
     {
-        cout<<"The GCD of two number is: "<<gcd<<endl;
+        cout<<"The GCD of the two numbers is: "<<n2<<endl;
         return;
     }
     
-    if(n1%i==0 && n2%i==0)
+    if(n2==0)
     {
-        gcd=i;
+        cout<<"The GCD of the two number is: "<<n1<<endl;
+        return;
     }
-    
-    f(n1,n2,i+1,gcd);
+
+    if(n1>n2)
+    {
+        n1=n1%n2;
+    }
+    else
+    {
+        n2=n2%n1;
+    }
+
+    f(n1,n2);
 }
 
 int main()
@@ -32,6 +42,6 @@ int main()
     cout<<"Enter the Number 2: ";
     cin>>n2;
     
-    f(n1,n2,1,0);
+    f(n1,n2);
     return 0;
 }
